@@ -1,10 +1,6 @@
 console.log(" hello");
 const os =require('os');
-const http=require('http');
-http.createServer((req,res)=>{
-    res.write("hello from node js");
-    res.end();
-});
+
 
 console.log("Hostname",os.hostname());
 console.log("freememory",os.freemem());
