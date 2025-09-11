@@ -11,9 +11,9 @@ class Greets extends Component{
   }
 }
 
-  class App extends Component{
+  function App() {
   
-  render(){
+  
     let dt=new Date();
   return (
     <div className="App">
@@ -31,6 +31,6 @@ class Greets extends Component{
     </div>
   );
   }
-}
+
 export default App;
 
