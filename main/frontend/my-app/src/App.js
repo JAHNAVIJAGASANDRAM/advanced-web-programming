@@ -6,28 +6,60 @@ import './App.css';
   return <h1>Hello, {props.name}</h1>;
 }
 class Greets extends Component{
+ 
   render(){
-    return <h1>Hello, {this.props.name}</h1>;
+    return (
+    <><h2>Welcome to {this.props.name}</h2></>
+  );
+  }
+}
+
+class DisplayDate extends Component{
+  constructor(){
+    super();
+    this.state={date:new Date()};
+  }
+  render(){
+    return (
+      <p>{this.state.date.toString()}</p>
+    );
   }
 }
 
   function App() {
   
   
-    let dt=new Date();
+    const dt=new Date();
+    
+    const time=dt.toDateString();
+   
+    function showTime(){
+      
+      alert(time);
+    }
+    const Goodbye = () => {
+    alert("Goodbye");
+  };
+
+
   return (
     <div className="App">
-      <header className="App-header"> 
-        <h1>Hello world!</h1>  </header>
+     <header className="App-header"> 
+        <h1>Hello world!</h1> 
         <p>Current Date and Time </p>
         <p>{dt.toString()}</p>
         <Greet name="John"/>
         <Greet name="Doe"/>
         <Greet name="Smith"/>
         <p>Class Components </p>
-        <Greets name="Alice"/>
-        <Greets name="Bob"/>
-        <Greets name="Charlie"/>
+        <Greets name="Class Component"/>
+        <DisplayDate/>
+        <button onClick={showTime}>Get Time</button>
+        
+        
+        <button onClick={Goodbye}>message</button>
+
+        </header>
     </div>
   );
   }
