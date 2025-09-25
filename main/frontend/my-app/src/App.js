@@ -1,6 +1,11 @@
 
-import { Component } from 'react';
+import { Component,useState,useEffect } from 'react';
 import './App.css';
+import ReactComponentDemo from './ReactComponentDemo';
+import Calculator from './Calculator';
+import Registration from './Registration';
+
+
 
  function Greet(props){
   return <h1>Hello, {props.name}</h1>;
@@ -28,7 +33,11 @@ class DisplayDate extends Component{
 
   function App() {
   
+  const [count,setCount]=useState(0);
+  const [showRegistration, setShowRegistration] = useState(false);
+
   
+
     const dt=new Date();
     
     const time=dt.toDateString();
@@ -43,6 +52,7 @@ class DisplayDate extends Component{
 
 
   return (
+    
     <div className="App">
      <header className="App-header"> 
         <h1>Hello world!</h1> 
@@ -58,6 +68,13 @@ class DisplayDate extends Component{
         
         
         <button onClick={Goodbye}>message</button>
+        <p>React Component Demo</p>
+        <ReactComponentDemo/>
+        <p>open calculator</p>
+        <Calculator/>
+        <p>click below to register</p>
+         <button onClick={() => setShowRegistration(true)}>Register</button>
+      {showRegistration && <Registration />}
 
         </header>
     </div>
